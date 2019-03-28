@@ -51,7 +51,7 @@
      <widget class="QTabWidget" name="tabWidget">
       <property name="geometry">
        <rect>
-        <x>90</x>
+        <x>80</x>
         <y>30</y>
         <width>1131</width>
         <height>441</height>
@@ -61,7 +61,7 @@
        <bool>false</bool>
       </property>
       <property name="currentIndex">
-       <number>12</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <property name="autoFillBackground">
@@ -6298,7 +6298,7 @@
      <x>0</x>
      <y>0</y>
      <width>1227</width>
-     <height>23</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

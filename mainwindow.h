@@ -24,6 +24,8 @@ extern QSpinBox *levels[SERVANT_MAX*8+1];
 extern QPushButton *deletes[SERVANT_MAX+1];
 extern QCheckBox *breaks[SERVANT_MAX+1];
 
+#define N2V(x)  servant_cal_##x
+
 namespace Ui {
 class MainWindow;
 }
@@ -67,12 +69,73 @@ private slots:
 //    void delete6();
 //    void delete7();
     void delete8();
+    void delete_test(QPushButton *send,int id);
 //    void delete9();
 //    void delete10();
 //    void delete11();
 
+
+    void on_servant_cal_068_clicked();
+
+
+
+    void on_servant_cal_076_clicked();
+
+    void on_servant_cal_090_clicked();
+
+    void on_servant_cal_091_clicked();
+
+    void on_servant_cal_153_clicked();
+
+    void on_servant_cal_160_clicked();
+
+    void on_servant_cal_213_clicked();
+
+    void on_servant_cal_004_clicked();
+
+    void on_servant_cal_005_clicked();
+
+    void on_servant_cal_006_clicked();
+
+    void on_servant_cal_010_clicked();
+
+    void on_servant_cal_101_clicked();
+
+    void on_servant_cal_121_clicked();
+
+    void on_servant_cal_123_clicked();
+
+    void on_servant_cal_138_clicked();
+
+    void on_servant_cal_176_clicked();
+
+    void on_servant_cal_187_clicked();
+
+    void on_servant_cal_221_clicked();
+
+    void on_servant_cal_223_clicked();
+
+    void on_servant_cal_227_clicked();
+
+    void on_servant_cal_007_clicked();
+
+    void on_servant_cal_009_clicked();
+
+    void on_servant_cal_072_clicked();
+
+    void on_servant_cal_126_clicked();
+
+    void on_servant_cal_220_clicked();
+
+    void on_servant_cal_166_clicked();
+
+    void on_servant_cal_234_clicked();
+
+    void on_servant_cal_165_clicked();
+
 private:
     Ui::MainWindow *ui;
+    void button_call(QPushButton *button,int id);
 
 };
 
