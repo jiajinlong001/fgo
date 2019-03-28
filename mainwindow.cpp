@@ -241,17 +241,7 @@ void MainWindow::reset(int id)
     //点击学妹
 void MainWindow::on_servant_cal_001_clicked()
 {
-    int id=1;
-        if (selected[id]==0)
-        {
-            showdetails(id);
-            //将删除按钮与对应的槽函数绑定，重复绑定会导致槽函数偷偷运行，运行结果不确定
-            if (connection[id]==0)
-            {
-                connection[id]=1;
-                connect(deletes[id],SIGNAL(clicked(bool)),this,SLOT(delete1()));
-            }
-        }
+button_call((QPushButton *)sender(),1);
 }
 
     //删除学妹
@@ -271,17 +261,7 @@ void MainWindow::delete1()
     //点击saber
 void MainWindow::on_servant_cal_002_clicked()
 {
-    int id=2;
-        if (selected[id]==0)
-        {
-            showdetails(id);
-            //将删除按钮与对应的槽函数绑定
-            if (connection[id]==0)
-            {
-                connection[id]=1;
-                connect(deletes[id],SIGNAL(clicked(bool)),this,SLOT(delete2()));
-            }
-        }
+    button_call((QPushButton *)sender(),2);
 }
 
     //删除saber
@@ -301,17 +281,7 @@ void MainWindow::delete2()
     //点击吾王alter，剑阶
 void MainWindow::on_servant_cal_003_clicked()
 {
-    int id=3;
-    if (selected[id]==0)
-    {
-        showdetails(id);
-        //将删除按钮与对应的槽函数绑定
-        if (connection[id]==0)
-        {
-            connection[id]=1;
-            connect(deletes[id],SIGNAL(clicked(bool)),this,SLOT(delete3()));
-        }
-    }
+button_call((QPushButton *)sender(),3);
 }
 
     //删除吾王alter，剑阶
@@ -325,23 +295,30 @@ void MainWindow::delete3()
     buf.sprintf(":/resource/head/%03d.jpg",id);
     QPixmap head;
     head.load(buf);
-    ui->servant_cal_003->setIcon(head);
+    ui->N2V(003)->setIcon(head);
 }
 
     //点击阿蒂拉0
-void MainWindow::on_servant_cal_008_clicked()
+void MainWindow::button_call(QPushButton *button,int id)
 {
-    int id=8;
+    //QPushButton *tmp;
+   // tmp = (QPushButton *)sender();
     if (selected[id]==0)
     {
         showdetails(id);
+
         //将删除按钮与对应的槽函数绑定
         if (connection[id]==0)
         {
             connection[id]=1;
-            connect(deletes[id],SIGNAL(clicked(bool)),this,SLOT(delete8()));
+            connect(deletes[id],&QPushButton::clicked,this,[=]{delete_test(button,id);});
         }
     }
+
+}
+void MainWindow::on_servant_cal_008_clicked()
+{
+    button_call((QPushButton *)sender(),8);
 }
 
     //删除阿蒂拉
@@ -355,6 +332,167 @@ void MainWindow::delete8()
     buf.sprintf(":/resource/head/%03d.jpg",id);
     QPixmap head;
     head.load(buf);
-    ui->servant_cal_008->setIcon(head);
+    //QPushButton * button = (QPushButton *)sender();
+    //button->setIcon(head);
+    //this->
+    ui->N2V(008)->setIcon(head);
 }
 
+void MainWindow::delete_test(QPushButton *recv,int id)
+{
+    //int id = 8;
+    remove(id);
+    reset(id);
+    //从者头像点亮
+    QString buf;
+    buf.sprintf(":/resource/head/%03d.jpg",id);
+    QPixmap head;
+    head.load(buf);
+   // QPushButton * button = (QPushButton *)sender();
+    // QPushButton * button =(QPushButton *) this;
+    recv->setIcon(head);
+    //ui->servant_cal_008->setIcon(head);
+
+}
+
+
+void MainWindow::on_servant_cal_068_clicked()
+{
+    button_call((QPushButton *)sender(),68);
+}
+
+
+void MainWindow::on_servant_cal_076_clicked()
+{
+    button_call((QPushButton *)sender(),76);
+}
+
+void MainWindow::on_servant_cal_090_clicked()
+{
+    button_call((QPushButton *)sender(),90);
+}
+
+void MainWindow::on_servant_cal_091_clicked()
+{
+    button_call((QPushButton *)sender(),91);
+}
+
+void MainWindow::on_servant_cal_153_clicked()
+{
+    button_call((QPushButton *)sender(),153);
+}
+
+void MainWindow::on_servant_cal_160_clicked()
+{
+    button_call((QPushButton *)sender(),160);
+}
+
+void MainWindow::on_servant_cal_213_clicked()
+{
+    button_call((QPushButton *)sender(),213);
+}
+
+void MainWindow::on_servant_cal_004_clicked()
+{
+    button_call((QPushButton *)sender(),4);
+}
+
+void MainWindow::on_servant_cal_005_clicked()
+{
+    button_call((QPushButton *)sender(),5);
+}
+
+void MainWindow::on_servant_cal_006_clicked()
+{
+    button_call((QPushButton *)sender(),6);
+}
+
+void MainWindow::on_servant_cal_010_clicked()
+{
+    button_call((QPushButton *)sender(),10);
+}
+
+void MainWindow::on_servant_cal_101_clicked()
+{
+    button_call((QPushButton *)sender(),101);
+}
+
+void MainWindow::on_servant_cal_121_clicked()
+{
+    button_call((QPushButton *)sender(),121);
+}
+
+void MainWindow::on_servant_cal_123_clicked()
+{
+    button_call((QPushButton *)sender(),123);
+}
+
+void MainWindow::on_servant_cal_138_clicked()
+{
+    button_call((QPushButton *)sender(),138);
+}
+
+void MainWindow::on_servant_cal_176_clicked()
+{
+    button_call((QPushButton *)sender(),176);
+}
+
+void MainWindow::on_servant_cal_187_clicked()
+{
+    button_call((QPushButton *)sender(),187);
+}
+
+void MainWindow::on_servant_cal_221_clicked()
+{
+    button_call((QPushButton *)sender(),221);
+}
+
+void MainWindow::on_servant_cal_223_clicked()
+{
+    button_call((QPushButton *)sender(),223);
+}
+
+void MainWindow::on_servant_cal_227_clicked()
+{
+    button_call((QPushButton *)sender(),227);
+}
+
+void MainWindow::on_servant_cal_007_clicked()
+{
+    button_call((QPushButton *)sender(),7);
+}
+
+void MainWindow::on_servant_cal_009_clicked()
+{
+    button_call((QPushButton *)sender(),9);
+}
+
+void MainWindow::on_servant_cal_072_clicked()
+{
+    button_call((QPushButton *)sender(),72);
+}
+
+void MainWindow::on_servant_cal_126_clicked()
+{
+    button_call((QPushButton *)sender(),126);
+}
+
+void MainWindow::on_servant_cal_220_clicked()
+{
+    button_call((QPushButton *)sender(),220);
+}
+
+void MainWindow::on_servant_cal_166_clicked()
+{
+    button_call((QPushButton *)sender(),166);
+}
+
+void MainWindow::on_servant_cal_234_clicked()
+{
+    button_call((QPushButton *)sender(),234);
+}
+
+void MainWindow::on_servant_cal_165_clicked()
+{
+    button_call((QPushButton *)sender(),165);
+}
